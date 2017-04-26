@@ -1,0 +1,31 @@
+EXAMEN
+
+
+
+Piense en una cosa() que tenga que ver con examen, haga una regla para esa cosa.
+
+
+
+Busque otra forma de definirlo y haga su otra regla-
+
+
+
+Busque 3 cositas que esten dentro de esa cosa y haga sus reglas.
+
+alimente con hechos necesarios.
+
+
+
+Comentarios:
+
+la logica
+
+la programación lógica 
+
+backtracking
+
+
+
+No ambiguedad 
+
+ 

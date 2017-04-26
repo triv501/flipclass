@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Materiasitz</title>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="js/validado_rlog_reg.js"></script>
+  
+  <link rel="stylesheet" href="css/style.css">
+<script type="text/javascript">
+{
+if(history.forward(1))
+location.replace(history.forward(1))
+}
+
+function validar(e) { // 1
+
+tecla = (document.all) ? e.keyCode : e.which; // 2
+
+if (tecla==8) return true; // 3
+
+patron =/[A-Za-z\s]/; // 4
+
+te = String.fromCharCode(tecla); // 5
+
+return patron.test(te); // 6
+}
+
+
+function numeros(nu) { // 1
+
+tecla = (document.all) ? e.keyCode : e.which; // 2
+
+if (tecla==8) return true; // 3
+
+ppatron = /\d/; // Solo acepta números// 4
+
+te = String.fromCharCode(tecla); // 5
+
+return patron.test(te); // 6
+
+}
+</script>
+  
+</head>
+
+<body>
+  <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Registro</a></li>
+        <li class="tab"><a href="#login">Iniciar Sesion</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Registro </h1>
+          
+          <form action="php/registro.php" method="post" onsubmit="return vali();" >
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                Primer Nombre<span class="req">*</span>
+              </label>
+              <input type="text" name="nombre" required autocomplete="off" onkeypress="return validar(event)" maxlength="18"/>
+            </div>
+            <div class="field-wrap">
+              <label>
+                Primer Apellido<span class="req">*</span>
+              </label>
+              <input type="text" name="apellido" required autocomplete="off" onkeypress="return validar(event)" maxlength="30"/ >
+            </div>
+          </div>
+		<div class="top-row">
+          <div class="field-wrap">
+            <label>
+              Email<span class="req">*</span>
+            </label>
+            <input type="email" name="email" required autocomplete="off" maxlength="100"/>
+          </div>
+          <div class="field-wrap">
+            <label>
+              No Control<span class="req">*</span>
+            </label>
+            <input type="text" name="control" id="control" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" required autocomplete="off" maxlength="8"/>
+          </div>
+		</div>
+          <div class="field-wrap">
+            <label>
+              Contraseña<span class="req">*</span>
+            </label>
+            <input type="password" id="pass" name="pass" required autocomplete="off" minlength=8/>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Repetir Contraseña<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" id="pass2" minlength=8/>
+          </div>
+          <button type="submit" class="button button-block"/>Guardar</button>
+          </form>
+
+        </div>
+        
+        <div id="login">  
+          <h1>Bienvenido</h1>
+          
+          <form action="php/loginverifica.php" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              No Control<span class="req">*</span>
+            </label>
+            <input type="text" name="txtcontrol" required autocomplete="off"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"  maxlength="8"  />
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Contraseña<span class="req">*</span>
+            </label>
+            <input type="password" name="txtpass" required autocomplete="off" maxlength="30"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Recuperar Contraseña</a></p>
+          
+          <input type="submit" value="Iniciar Session" class="button button-block"/>
+          
+          </form>
+
+        </div>
+      
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
